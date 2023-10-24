@@ -12,6 +12,7 @@
             <th>Nama</th>
             <th>Alamat</th>
             <th>Pekerjaan</th>
+            <th>Foto</th>
             <th>Action</th>
         </tr> 
        <?php
@@ -19,11 +20,12 @@
        foreach($mahasiswa as $u){
         ?>
         <tr>
-        <td><?php echo $no++ ?></td>
+            <td><?php echo $no++ ?></td>
             <td><?php echo $u->nim ?></td>
             <td><?php echo $u->nama ?></td>
             <td><?php echo $u->alamat ?></td>
             <td><?php echo $u->pekerjaan ?></td>
+            <td><img src="<?php echo base_url () ;?><?php echo $u->foto ?>" width="50" height="50"></td>
             <td>
                 <?php echo anchor('kampus/edit/'.$u->id,'Edit'); ?>
                 <a class="fas fa-delete" href="<?= base_url('kampus/hapus/'.$u->id); ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</a>
